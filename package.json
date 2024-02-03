@@ -12,7 +12,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"start:typesense": "docker compose up",
-		"index:typesense": "npx tsx ./scripts/indexTypesense.ts"
+		"index:typesense": "npx tsx ./scripts/indexTypesense.ts",
+		"cypress:open": "cypress open"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
@@ -22,6 +23,7 @@
 		"@types/react-dom": "^18.2.18",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
+		"cypress": "^13.6.4",
 		"dotenv": "^16.4.1",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
