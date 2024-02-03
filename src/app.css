@@ -1,0 +1,215 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-weight: 400;
+
+	/* @link https://utopia.fyi/type/calculator?c=320,15,1.25,1240,20,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	--step--2: clamp(0.6rem, 0.5913rem + 0.0435vw, 0.625rem);
+	--step--1: clamp(0.75rem, 0.7035rem + 0.2326vw, 0.8838rem);
+	--step-0: clamp(0.9375rem, 0.8288rem + 0.5435vw, 1.25rem);
+	--step-1: clamp(1.1719rem, 0.9647rem + 1.0359vw, 1.7675rem);
+	--step-2: clamp(1.465rem, 1.1052rem + 1.7989vw, 2.4994rem);
+	--step-3: clamp(1.8313rem, 1.2391rem + 2.9609vw, 3.5338rem);
+	--step-4: clamp(2.2888rem, 1.3468rem + 4.7098vw, 4.9969rem);
+	--step-5: clamp(2.8613rem, 1.3989rem + 7.312vw, 7.0656rem);
+
+	--100: #fff;
+	--200: #fafafa;
+	--300: #e4e4e4;
+	--400: #ababab;
+	--500: #363637;
+	--600: #252529;
+	--700: #1e1e20;
+	--800: #1b1b1f;
+	--900: #161618;
+	--txt-200: rgba(255, 255, 245, 0.86);
+	--txt-300: rgba(235, 235, 235, 0.6);
+	--accent: #ed0e73;
+	--primary-glow: conic-gradient(
+		from 180deg at 50% 50%,
+		#ed0e73 0deg,
+		hsla(210, 100%, 52%, 0.2) 55deg,
+		#54d6ff33 140deg,
+		#ff400096 160deg,
+		transparent 360deg
+	);
+	--pad-top: 1rem;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	background-color: var(--100);
+}
+html,
+body {
+	width: 100vw;
+	min-width: fit-content;
+	min-height: 100vh;
+	min-height: 100dvh;
+	color: var(--700);
+	overflow-x: hidden;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+a,
+button {
+	cursor: pointer;
+}
+.ais-InfiniteHits-loadMore,
+.ais-RefinementList-showMore {
+	padding: 6px 12px;
+	border-radius: 5px;
+	color: var(--700);
+	background-color: #fff0;
+	border: 1px solid var(--700);
+	transition: all 0.25s;
+}
+.ais-InfiniteHits-loadMore:hover,
+.ais-RefinementList-showMore:hover {
+	background-color: var(--700);
+	color: var(--100);
+}
+.ais-RefinementList-showMore:disabled {
+	display: none;
+}
+
+/* infinite hits */
+.ais-InfiniteHits {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding-top: var(--pad-top);
+}
+.ais-InfiniteHits-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(max(30%, 140px), 1fr));
+	list-style: none;
+	gap: 2rem 0.5rem;
+}
+
+.ais-InfiniteHits-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	animation: fadeUp 0.75s ease-out forwards;
+}
+.ais-InfiniteHits-item svg {
+	max-width: 250px;
+}
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+.ais-InfiniteHits-loadMore {
+	align-self: center;
+}
+.ais-InfiniteHits-loadMore:disabled {
+	display: none;
+}
+.posCount {
+	font-size: var(--step--1);
+}
+.chord_name {
+	margin-bottom: -0.75rem;
+	font-size: calc(var(--step-0) + 0.2vmax);
+}
+/* Search and filter */
+.SearchAndFilter {
+	min-width: 15vw;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding-top: var(--pad-top);
+	height: fit-content;
+}
+.SearchAndFilter h3 {
+	font-size: calc(var(--step-0) - 0.1vmax);
+}
+/*  Search box */
+.ais-SearchBox-form {
+	height: 32px;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.ais-SearchBox-form button {
+	padding: 0 0.75rem 0 0.5rem;
+	background-color: #fff0;
+	border: none;
+	position: absolute;
+	right: 0;
+}
+.ais-SearchBox-loadingIndicator {
+	display: none !important;
+}
+.ais-SearchBox-input {
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	background-color: var(--100);
+	border: 1px solid var(--400);
+	padding: 0 1rem 0 0.5rem;
+	color: var(--700);
+}
+.ais-SearchBox-input::-webkit-search-cancel-button {
+	display: none;
+}
+.ais-SearchBox-submit {
+	display: none;
+}
+/*  Refinement */
+.ais-RefinementList-label {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	background-color: var(--200);
+	cursor: pointer;
+	border-radius: 5px;
+}
+.ais-RefinementList-label:hover {
+	background-color: var(--300);
+}
+.ais-RefinementList-checkbox {
+	margin-right: 0.5rem;
+	accent-color: var(--accent);
+}
+.ais-RefinementList-count {
+	margin-left: auto;
+	font-size: var(--step--1);
+}
+
+.ais-RefinementList-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.ais-RefinementList {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.ais-RefinementList-showMore {
+	width: fit-content;
+	margin: auto;
+}
+.ais-RefinementList-noResults {
+	font-size: var(--step--1);
+}
+.ais-Highlight-highlighted,
+.ais-RefinementList-label mark {
+	background-color: var(--accent) !important;
+}
