@@ -38,7 +38,7 @@
 	</div>
 </div>
 <a
-	href="https://github.com/typesense/showcase-guitar-chords-search-vanilla-js"
+	href="https://github.com/typesense/showcase-guitar-chords-search-svelte-kit"
 	target="_blank"
 	rel="noopener noreferrer"
 	id="githubLink"
