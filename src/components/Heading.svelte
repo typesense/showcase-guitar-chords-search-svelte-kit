@@ -43,6 +43,7 @@
 	rel="noopener noreferrer"
 	id="githubLink"
 	title="Github repo"
+	aria-label="Github repo"
 >
 	<svg
 		stroke="currentColor"
